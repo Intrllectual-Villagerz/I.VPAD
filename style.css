@@ -587,7 +587,7 @@ section{
 /* footer */
 
 .footer{
-  background: #4d4b4bbb;
+  background: #eee5e6;
   text-align: center;
 }
 
@@ -607,7 +607,7 @@ section{
 }
 
 .footer .share a:hover{
-  color: #e9b421c0;
+  color: #fff;
   background: var(--primary-color);
 }
 
