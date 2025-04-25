@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I.VPAD Search </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap");
+
+      * {
+        font-family: inter tight;
+      }
+    </style>
+  </head>
+  <body class="w-screen min-h-full bg-gray-900">
+  <div class="container my-8 flex flex-col items-center justify-center">
+    <input
+            type="text"
+            class="search w-3/4 h-12 bg-gray-700 p-4 outline-none rounded-md mb-6"
+            placeholder="Search..."
+            onchange="search()"
+            onkeydown="search()"
+            onkeyup="search()"
+            onkeypress="search()"
+    />
+    <div
+            class="options relative w-3/4 h-auto rounded-md overflow-hidden"
+    ></div>
+  </div>
+
+    <script>
+      // data for search
+      const options = [
+        {
+          name: "Psycho The Rapper",
+          url: "file:///D:/ivpad/App/R80%20For%20Listeners/About/Psycho%20The%20Rapper/About%20Artist.html",
+        },
+        {
+          name: "ODD LUU",
+          url: "file:///D:/ivpad/App/R80%20For%20Listeners/About/ODD%20LUU/About%20Artist.html",
+        },
+        {
+          name: "Homie K.P 3",
+          url: "file:///D:/ivpad/App/R80%20For%20Listeners/About/Homie%20K.P%203/About%20Artist.html",
+        },
+        {
+          name: "Dlanga FAM 96",
+          url: "file:///D:/ivpad/App/R80%20For%20Listeners/About/Dlanga%20FAM%2096/About%20Artist.html",
+        },
+        {
+          name: "Sweet Savage",
+          url: "https://drupal.org",
+        },
+        {
+          name: "D.O.XRSA",
+          url: "file:///D:/ivpad/App/R80%20For%20Listeners/About/D.O.X/About%20Artist.html",
+        },
+        {
+          name: "Tumilemang",
+          url: "https://mapy.cz",
+        },
+        {
+          name: "Stogimister",
+          url: "https://businesswire.com",
+        },
+        {
+          name: "Fix San",
+          url: "http://ocn.ne.jp",
+        },
+        {
+          name: "Biodex",
+          url: "https://symantec.com",
+        },
+        {
+          name: "Stringtough",
+          url: "https://blogs.com",
+        },
+        {
+          name: "Vagram",
+          url: "http://tripadvisor.com",
+        },
+        {
+          name: "Konklux",
+          url: "https://intel.com",
+        },
+        {
+          name: "Pannier",
+          url: "https://cyberchimps.com",
+        },
+        {
+          name: "Flowdesk",
+          url: "http://about.me",
+        },
+        {
+          name: "Tres-Zap",
+          url: "https://nba.com",
+        },
+        {
+          name: "Zoolab",
+          url: "http://yandex.ru",
+        },
+        {
+          name: "Subin",
+          url: "https://apache.org",
+        },
+        {
+          name: "Jozi FM",
+          url: "http://columbia.edu",
+        },
+        {
+          name: "SAfmRadio",
+          url: "http://nih.gov",
+        },
+        {
+          name: "Zoolab",
+          url: "http://yandex.ru",
+        },
+        {
+          name: "Subin",
+          url: "https://apache.org",
+        },
+        {
+          name: "Jozi FM",
+          url: "http://columbia.edu",
+        },
+        {
+          name: "SAfmRadio",
+          url: "http://nih.gov",
+        },
+      ];
+
+      const optionsEL = document.querySelector(".options");
+      options.forEach((i) => {
+        let option = document.createElement("a");
+        option.classList.add(
+          "option",
+          "h-12",
+          "bg-gray-700",
+          "text-white",
+          "block",
+          "border-b",
+          "border-gray-600",
+          "flex",
+          "items-center",
+          "px-4"
+        );
+        option.innerHTML = i.name;
+        option.setAttribute("href", i.url);
+        optionsEL.appendChild(option);
+      });
+    </script>
+    <script>
+      // search function
+
+      const optionsEls = document.querySelectorAll(".option");
+      const searchEl = document.querySelector(".search");
+
+      const search = () =>
+        optionsEls.forEach(
+          (e) =>
+            (e.style.display =
+              e.innerHTML.toUpperCase().indexOf(searchEl.value.toUpperCase()) >
+              -1
+                ? ""
+                : "none")
+        );
+    </script>
+  </body>
+</html>
